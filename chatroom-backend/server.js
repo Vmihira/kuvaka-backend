@@ -55,12 +55,12 @@ app.post('/api/rooms/create', async (req, res) => {
     });
     
     await newRoom.save();
-    
+    console.log("room saved")
     res.json({
       success: true,
       roomId,
       roomName,
-      link: `https://kuvaka-frontend-f8c7fwcw8-mihiras-projects.vercel.app/room/${roomId}`
+      link: `https://kuvaka-frontend-nine.vercel.app//room/${roomId}`
     });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
