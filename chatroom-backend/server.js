@@ -60,7 +60,7 @@ app.post('/api/rooms/create', async (req, res) => {
       success: true,
       roomId,
       roomName,
-      link: `https://kuvaka-frontend-nine.vercel.app//room/${roomId}`
+      link: `https://kuvaka-frontend-nine.vercel.app/room/${roomId}`
     });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
@@ -72,7 +72,7 @@ app.get('/api/rooms/:roomId', async (req, res) => {
     const { roomId } = req.params;
     const room = await Room.findOne({ roomId });
     
-    if (!room) {
+    if (!room) { 
       return res.status(404).json({ success: false, error: 'Room not found' });
     }
     
