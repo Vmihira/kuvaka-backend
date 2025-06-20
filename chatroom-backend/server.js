@@ -10,7 +10,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: 'https://kuvaka-frontend-f8c7fwcw8-mihiras-projects.vercel.app',
+    origin: 'https://kuvaka-frontend-nine.vercel.app/',
     methods: ["GET", "POST"]
   }
 });
