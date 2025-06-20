@@ -10,7 +10,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://kuvaka-frontend-nine.vercel.app",
     methods: ["GET", "POST"]
   }
 });
@@ -60,7 +60,7 @@ app.post('/api/rooms/create', async (req, res) => {
       success: true,
       roomId,
       roomName,
-      link: `http://localhost:5173/room/${roomId}`
+      link: `https://kuvaka-frontend-nine.vercel.app/room/${roomId}`
     });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
